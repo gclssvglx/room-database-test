@@ -70,5 +70,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+//    Using annotationProcessor - the app compiles, but errors with this...
+//    java.lang.RuntimeException: Unable to start activity ComponentInfo{com.gclewis/com.gclewis.MainActivity}:
+//          java.lang.RuntimeException: Cannot find implementation for
+//          com.gclewis.AppDatabase. AppDatabase_Impl does not exist
+//    Looks like the fix is to change annotationProcessor to KSP. That doesn't even compile.
     annotationProcessor(libs.androidx.room.compiler)
 }
